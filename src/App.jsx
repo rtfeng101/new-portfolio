@@ -1,24 +1,33 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import ProjectWorld from "./pages/ProjectWorld";
 
 import About from "./pages/About";
-import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Skills from "./pages/Skills";
-import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
+import Resume from "./pages/Resume";
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
+    <>
+        <div className="panorama" />
+        <Routes>
+        <Route path="/" element={<Home />} />
 
-      <Route path="/about" element={<About />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/experience" element={<Experience />} />
-      <Route path="/skills" element={<Skills />} />
-      <Route path="/resume" element={<Resume />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
+        {/* Minecraft "Singleplayer Menu" equivalent */}
+        <Route path="/projects" element={<Projects />} />
+
+        {/* Minecraft "World load screen / world open" */}
+        <Route path="/projects/:id" element={<ProjectWorld />} />
+
+        <Route path="/about" element={<About />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
+        </Routes>
+    </>
   );
 }

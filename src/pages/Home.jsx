@@ -17,8 +17,6 @@ export default function Home() {
 
   return (
     <div className="minecraft-menu">
-      <div className="panorama" />
-
       <div className="menu-container">
         <div className="logo-section">
           <h1 className="logo">Richard Feng</h1>

@@ -64,6 +64,8 @@ body {
   border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
+  position: relative;
+  z-index: 1;
   flex-direction: column;
   box-sizing: border-box;
 }
@@ -110,4 +112,22 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.panorama {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: url("./assets/panorama.jpg");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+
+  animation: pan 60s linear infinite;
+  will-change: background-position;
+}
+
+@keyframes pan {
+  from { background-position: 0 0; }
+  to { background-position: -2000px 0; }
 }

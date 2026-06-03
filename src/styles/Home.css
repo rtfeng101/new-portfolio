@@ -23,26 +23,7 @@
   font-family: "Minecraft", monospace;
 }
 
-.panorama {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
 
-  background-image: url("../assets/panorama.jpg");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-
-  animation: pan 60s linear infinite alternate;
-}
-
-@keyframes pan {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -2000px 0;
-  }
-}
 
 .background-overlay {
   position: absolute;
