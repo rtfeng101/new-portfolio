@@ -1,0 +1,190 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url("../assets/minecraft-font.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.minecraft-menu {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  font-family: "Minecraft", monospace;
+}
+
+.panorama {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("../assets/panorama.jpg");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+
+  animation: pan 60s linear infinite alternate;
+}
+
+@keyframes pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2000px 0;
+  }
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  padding-top: 50px;
+}
+
+.logo-section {
+  margin-top: 2rem;
+  position: relative;
+  
+  padding-bottom: 30px;
+}
+
+.logo {
+  font-family: "Minecraft";
+  font-size: clamp(5rem, 9vw, 8rem);
+
+  color: white;
+
+  white-space: nowrap;
+
+  text-shadow: 4px 4px black;
+}
+
+
+.splash-text {
+  position: absolute;
+
+  right: -130px;
+  top: 75px;
+
+  color: #ffff55;
+
+  font-size: 1.3rem;
+
+  transform: rotate(-15deg);
+
+  animation: pulse 1.5s infinite ease-in-out;
+
+  text-shadow: 2px 2px black;
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(-15deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-15deg) scale(1.15);
+  }
+
+  100% {
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
+.button-group {
+  margin-top: 2rem;
+
+  width: min(600px, 90vw);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mc-button {
+  height: 58px;
+
+  background: #979797;
+
+  color: white;
+
+  border-top: 3px solid #c6c6c6;
+  border-left: 3px solid #c6c6c6;
+  border-right: 3px solid #3d3d3d;
+  border-bottom: 3px solid #3d3d3d;
+
+  font-family: "Minecraft";
+
+  font-size: 1.25rem;
+
+  cursor: pointer;
+
+  text-shadow: 2px 2px #000;
+
+  transition: 0.1s;
+}
+
+.button-group .mc-button:hover {
+  background: #8b8b8b;
+  color: #ffff55;
+}
+
+.mc-button:active {
+  transform: translateY(2px);
+}
+
+.bottom-buttons {
+  display: flex;
+  gap: 16px;
+
+  width: 100%;
+}
+
+.bottom-buttons .small {
+  flex: 1;
+}
+
+.bottom-bar {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 15px;
+
+  padding: 0 15px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+
+  text-shadow: 2px 2px black;
+
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    width: 95%;
+  }
+
+  .splash-text {
+    display: none;
+  }
+}
