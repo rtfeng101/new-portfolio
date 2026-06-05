@@ -1,18 +1,18 @@
 export const experiences = [
   {
-    id: "SoS",
+    id: "example",
 
-    title: "Software Developer II",
+    title: "example title",
 
     date: "Jan 2026 - Present",
 
     metadata:
       "React • Python • Opensearch",
 
-    thumbnail: "/images/sos.png",
+    thumbnail: "/images/example.png",
 
     description:
-      "Software developer at SoS, building search and analytics solutions for enterprise clients.",
+      "example description",
     
     sections: [
       { type: "image-center", src: "/images/portfolio.png", caption: "Home screen" },
