@@ -1,9 +1,9 @@
 export const about = {
   hero: {
-    photo: "/images/your-photo.png",
-    name: "Your Name",
-    tagline: "Your tagline here",
-    subtext: "e.g. Computer Science Student • Software Developer",
+    photo: "/images/hero.jpg",
+    name: "Richard Feng",
+    tagline: "Hey there!",
+    subtext: "UW Madison Alumni • CompSci and DataSci • Software Developer",
   },
 
   bio: "Write a short paragraph about yourself here. Keep it friendly and personal — who you are, what drives you, what you're working toward.",

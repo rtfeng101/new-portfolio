@@ -60,16 +60,21 @@
 /* ── Item frame ─────────────────────────────────────────────────────────── */
 .item-frame {
   display: inline-flex;
-  padding: 10px;
-  border: 8px solid transparent;
-  border-image: url("../assets/slot.jpg") 8 fill stretch;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-image: url("../assets/slot.jpg");
+  background-size: 100% 100%;
   image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback for some browsers */
 }
 
 .item-frame img {
   display: block;
   image-rendering: pixelated;
   object-fit: cover;
+  width: 90%;
+  height: 90%;
 }
 
 .frame-caption {
@@ -89,8 +94,8 @@
 }
 
 .detail-section.image-center .item-frame img {
-  width: 320px;
-  height: 320px;
+  width: 250px;
+  height: 250px;
 }
 
 /* ── image-left / image-right (two column) ──────────────────────────────── */
@@ -126,7 +131,7 @@
 .detail-section.image-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -137,8 +142,8 @@
 }
 
 .detail-section.image-grid .item-frame img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 
 /* ── photo-list ─────────────────────────────────────────────────────────── */
