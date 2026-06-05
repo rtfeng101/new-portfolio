@@ -1,16 +1,27 @@
-import { useNavigate } from "react-router-dom";
+import { skills } from "../data/skills";
+import SelectorScreen from "../components/SelectorScreen";
+import SkillEntry from "../components/SkillEntry";
+
+import "../styles/Skills.css";
 
 export default function Skills() {
-  const navigate = useNavigate();
-
   return (
-    <div style={{ color: "white", padding: 20 }}>
-      <h1>SKILLS</h1>
-      <p>Skills placeholder</p>
-
-      <button onClick={() => navigate("/")}>
-        Back
-      </button>
-    </div>
+    <SelectorScreen
+      title="Select Skill"
+      items={skills}
+      filterFn={(skill, query) =>
+        skill.title.toLowerCase().includes(query.toLowerCase())
+      }
+      renderItem={(skill, isSelected, onSelect) => (
+        <SkillEntry
+          key={skill.id}
+          skill={skill}
+          selected={isSelected}
+          onClick={onSelect}
+        />
+      )}
+      getOpenPath={(skill) => `/skills/${skill.id}`}
+      openLabel="Open Skill"
+    />
   );
 }

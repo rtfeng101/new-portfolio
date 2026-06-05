@@ -78,7 +78,7 @@ export default function SelectorScreen({
         </button>
 
         <button className="mc-button" onClick={() => navigate(cancelPath)}>
-          Cancel
+          Back
         </button>
       </div>
     </div>
