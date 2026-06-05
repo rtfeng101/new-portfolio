@@ -1,15 +1,33 @@
-// src/data/projects.js
 export const projects = [
   {
-    id: "ml-image-classifier",
-    name: "Medical Image Classifier",
-    description: "CNN model for OCT scan classification",
-    worldType: "Machine Learning",
+    id: "portfolio",
+
+    title: "Minecraft Portfolio",
+
+    date: "Jun 2026",
+
+    metadata:
+      "React • Spring Boot • PostgreSQL",
+
+    thumbnail: "/images/portfolio.png",
+
+    description:
+      "Minecraft-inspired portfolio."
   },
+
   {
-    id: "portfolio-game-ui",
-    name: "Minecraft Portfolio UI",
-    description: "This website itself",
-    worldType: "Frontend",
+    id: "oct",
+
+    title: "OCT Classifier",
+
+    date: "May 2026",
+
+    metadata:
+      "PyTorch • CNN • Medical Imaging",
+
+    thumbnail: "/images/oct.png",
+
+    description:
+      "Retinal disease classification."
   },
 ];

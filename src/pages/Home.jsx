@@ -1,5 +1,6 @@
 import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const splashTexts = [
   "Computer Science Graduate!",
@@ -19,7 +20,7 @@ export default function Home() {
     <div className="minecraft-menu">
       <div className="menu-container">
         <div className="logo-section">
-          <h1 className="logo">Richard Feng</h1>
+          <img src={logo} alt="Logo" className="logo-img" />
 
           <div className="splash-text">{randomSplash}</div>
         </div>

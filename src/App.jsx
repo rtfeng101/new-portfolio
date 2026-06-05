@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import ProjectWorld from "./pages/ProjectWorld";
 
 import About from "./pages/About";
 import Experience from "./pages/Experience";
@@ -19,8 +18,6 @@ export default function App() {
         {/* Minecraft "Singleplayer Menu" equivalent */}
         <Route path="/projects" element={<Projects />} />
 
-        {/* Minecraft "World load screen / world open" */}
-        <Route path="/projects/:id" element={<ProjectWorld />} />
 
         <Route path="/about" element={<About />} />
         <Route path="/experience" element={<Experience />} />
