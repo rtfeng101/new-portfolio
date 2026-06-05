@@ -30,9 +30,9 @@ function ImageLeft({ src, caption, text }) {
   );
 }
 
-function TextLeft({ src, caption, text }) {
+function ImageRight({ src, caption, text }) {
   return (
-    <div className="detail-section text-left">
+    <div className="detail-section image-right">
       <div className="text-col">
         <p>{text}</p>
       </div>
@@ -42,6 +42,62 @@ function TextLeft({ src, caption, text }) {
         </div>
         {caption && <p className="frame-caption">{caption}</p>}
       </div>
+    </div>
+  );
+}
+
+function ImageGrid({ images }) {
+  return (
+    <div className="detail-section image-grid">
+      {images.map((img, i) => (
+        <div key={i} className="grid-item">
+          <div className="item-frame">
+            <img src={img.src} alt={img.caption ?? ""} />
+          </div>
+          {img.caption && <p className="frame-caption">{img.caption}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PhotoList({ items }) {
+  return (
+    <div className="detail-section photo-list">
+      {items.map((item, i) => (
+        <div key={i} className="photo-list-item">
+          <div className="item-frame photo-list-frame">
+            <img src={item.src} alt={item.title ?? ""} />
+          </div>
+          <div className="photo-list-text">
+            {item.title && <div className="world-title">{item.title}</div>}
+            {item.date && <div className="world-date">{item.date}</div>}
+            {item.text && <p>{item.text}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function TwoColumnText({ left, right }) {
+  return (
+    <div className="detail-section two-column-text">
+      <div className="text-col">
+        <p>{left}</p>
+      </div>
+      <div className="text-col">
+        <p>{right}</p>
+      </div>
+    </div>
+  );
+}
+
+function Banner({ src, caption }) {
+  return (
+    <div className="detail-section banner">
+      <img src={src} alt={caption ?? ""} className="banner-img" />
+      {caption && <p className="frame-caption">{caption}</p>}
     </div>
   );
 }
@@ -71,35 +127,21 @@ function BulletList({ heading, items }) {
 
 function Section(section) {
   switch (section.type) {
-    case "image-center":
-      return <ImageCenter {...section} />;
-    case "image-left":
-      return <ImageLeft {...section} />;
-    case "text-left":
-      return <TextLeft {...section} />;
-    case "text":
-      return <TextBlock {...section} />;
-    case "bullets":
-      return <BulletList {...section} />;
-    default:
-      return null;
+    case "image-center":  return <ImageCenter {...section} />;
+    case "image-left":    return <ImageLeft {...section} />;
+    case "image-right":   return <ImageRight {...section} />;
+    case "image-grid":    return <ImageGrid {...section} />;
+    case "photo-list":    return <PhotoList {...section} />;
+    case "two-column-text": return <TwoColumnText {...section} />;
+    case "banner":        return <Banner {...section} />;
+    case "text":          return <TextBlock {...section} />;
+    case "bullets":       return <BulletList {...section} />;
+    default:              return null;
   }
 }
 
 // ── Main component ─────────────────────────────────────────────────────────
 
-/**
- * DetailPage
- *
- * Props
- * ─────
- * @param {string}   title       - Item title
- * @param {string}   date        - Date string
- * @param {string}   metadata    - Subtitle / tag string
- * @param {object[]} sections    - Array of section objects (see Section dispatcher above)
- * @param {string}   backPath    - Route to navigate back to
- * @param {string}   [backLabel] - Back button label (default "Back")
- */
 export default function DetailPage({
   title,
   date,

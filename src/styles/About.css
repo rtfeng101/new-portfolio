@@ -1,0 +1,46 @@
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.about-hero {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+
+  width: min(900px, 90vw);
+
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+
+  margin-bottom: 32px;
+}
+
+.about-hero-frame .item-frame img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.about-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-hero-name {
+  font-family: "Minecraft", sans-serif;
+  font-size: 2rem;
+  text-shadow: 3px 3px black;
+  color: white;
+}
+
+.about-hero-tagline {
+  font-family: "Minecraft", sans-serif;
+  font-size: 1.1rem;
+  color: #ffff55;
+  text-shadow: 2px 2px black;
+}
+
+.about-hero-subtext {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}

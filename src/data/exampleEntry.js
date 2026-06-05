@@ -1,4 +1,4 @@
-export const experiences = [
+export const exampleEntry = [
   {
     id: "example",
 
@@ -15,10 +15,15 @@ export const experiences = [
       "example description",
     
     sections: [
-      { type: "image-center", src: "/images/portfolio.png", caption: "Home screen" },
-      { type: "image-left", src: "/images/detail.png", caption: "Detail view", text: "Built with React and Spring Boot..." },
-      { type: "text", content: "A full description of the project..." },
-      { type: "bullets", heading: "Key Features", items: ["Feature one", "Feature two"] },
+      { type: "image-center", src: "...", caption: "..." },
+      { type: "image-left",   src: "...", caption: "...", text: "..." },
+      { type: "image-right",  src: "...", caption: "...", text: "..." },
+      { type: "image-grid",   images: [{ src: "...", caption: "..." }, ] },
+      { type: "photo-list",   items: [{ src: "...", title: "...", date: "...", text: "..." }, ] },
+      { type: "two-column-text", left: "...", right: "..." },
+      { type: "banner",       src: "...", caption: "..." },
+      { type: "text",         content: "..." },
+      { type: "bullets",      heading: "...", items: ["...", "..."] },
     ]
   },
 ];

@@ -15,7 +15,7 @@ export default function experienceDetail() {
       metadata={experience.metadata}
       sections={experience.sections ?? []}
       backPath="/experiences"
-      backLabel="Back to experiences"
+      backLabel="Back to Experiences"
     />
   );
 }

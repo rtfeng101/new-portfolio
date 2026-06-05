@@ -28,9 +28,9 @@
 
 .detail-title {
   font-size: 2rem;
+  font-family: "Minecraft", sans-serif;
   text-shadow: 3px 3px black;
   margin-bottom: 6px;
-  font-family: "Minecraft", sans-serif;
 }
 
 .detail-date {
@@ -60,12 +60,9 @@
 /* ── Item frame ─────────────────────────────────────────────────────────── */
 .item-frame {
   display: inline-flex;
-  padding: 6px;
-  background: #6b4c2a;
-  border-top: 4px solid #a0733a;
-  border-left: 4px solid #a0733a;
-  border-right: 4px solid #3b2510;
-  border-bottom: 4px solid #3b2510;
+  padding: 10px;
+  border: 8px solid transparent;
+  border-image: url("../assets/slot.jpg") 8 fill stretch;
   image-rendering: pixelated;
 }
 
@@ -96,9 +93,9 @@
   height: 320px;
 }
 
-/* ── image-left / text-left (two column) ────────────────────────────────── */
+/* ── image-left / image-right (two column) ──────────────────────────────── */
 .detail-section.image-left,
-.detail-section.text-left {
+.detail-section.image-right {
   display: flex;
   gap: 24px;
   align-items: flex-start;
@@ -125,6 +122,80 @@
   color: #e0e0e0;
 }
 
+/* ── image-grid ─────────────────────────────────────────────────────────── */
+.detail-section.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-section.image-grid .item-frame img {
+  width: 200px;
+  height: 200px;
+}
+
+/* ── photo-list ─────────────────────────────────────────────────────────── */
+.detail-section.photo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.photo-list-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.photo-list-frame .item-frame img {
+  width: 80px;
+  height: 80px;
+}
+
+.photo-list-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* ── two-column-text ────────────────────────────────────────────────────── */
+.detail-section.two-column-text {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* ── banner ─────────────────────────────────────────────────────────────── */
+.detail-section.banner {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  image-rendering: pixelated;
+  display: block;
+}
+
+.detail-section.banner .frame-caption {
+  padding: 8px;
+}
+
 /* ── text block ─────────────────────────────────────────────────────────── */
 .detail-section.text-block p {
   line-height: 1.7;
@@ -133,6 +204,7 @@
 
 /* ── bullet list ────────────────────────────────────────────────────────── */
 .bullet-heading {
+  font-family: "Minecraft", sans-serif;
   color: white;
   margin-bottom: 10px;
   text-shadow: 2px 2px black;
