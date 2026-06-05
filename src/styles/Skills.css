@@ -1,0 +1,18 @@
+.skill-entry {
+  justify-content: space-between;
+}
+
+.skill-ping {
+  width: 26px;
+  height: 26px;
+  image-rendering: pixelated;
+  align-self: center;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.skill-related {
+  color: #7ec8e3;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}

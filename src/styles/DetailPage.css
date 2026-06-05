@@ -1,0 +1,166 @@
+/* ── Screen ─────────────────────────────────────────────────────────────── */
+.detail-screen {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 20px 60px;
+
+  color: white;
+  font-family: "Minecraft", sans-serif;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../textures/dirt.png");
+  background-repeat: repeat;
+  background-size: 64px 64px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.detail-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.detail-title {
+  font-size: 2rem;
+  text-shadow: 3px 3px black;
+  margin-bottom: 6px;
+  font-family: "Minecraft", sans-serif;
+}
+
+.detail-date {
+  color: #bdbdbd;
+  margin-bottom: 4px;
+}
+
+.detail-meta {
+  color: #9c9c9c;
+}
+
+/* ── Content area ───────────────────────────────────────────────────────── */
+.detail-content {
+  width: min(900px, 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Shared section base ────────────────────────────────────────────────── */
+.detail-section {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Item frame ─────────────────────────────────────────────────────────── */
+.item-frame {
+  display: inline-flex;
+  padding: 6px;
+  background: #6b4c2a;
+  border-top: 4px solid #a0733a;
+  border-left: 4px solid #a0733a;
+  border-right: 4px solid #3b2510;
+  border-bottom: 4px solid #3b2510;
+  image-rendering: pixelated;
+}
+
+.item-frame img {
+  display: block;
+  image-rendering: pixelated;
+  object-fit: cover;
+}
+
+.frame-caption {
+  color: #bdbdbd;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* ── image-center ───────────────────────────────────────────────────────── */
+.detail-section.image-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  align-self: center;
+}
+
+.detail-section.image-center .item-frame img {
+  width: 320px;
+  height: 320px;
+}
+
+/* ── image-left / text-left (two column) ────────────────────────────────── */
+.detail-section.image-left,
+.detail-section.text-left {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.frame-col {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frame-col .item-frame img {
+  width: 180px;
+  height: 180px;
+}
+
+.text-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+/* ── text block ─────────────────────────────────────────────────────────── */
+.detail-section.text-block p {
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+/* ── bullet list ────────────────────────────────────────────────────────── */
+.bullet-heading {
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px black;
+}
+
+.detail-section.bullet-list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-section.bullet-list ul li::before {
+  content: "- ";
+  color: #ffff55;
+}
+
+.detail-section.bullet-list ul li {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.detail-footer {
+  margin-top: 40px;
+}
+
+.detail-footer .mc-button {
+  width: 300px;
+}
