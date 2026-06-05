@@ -34,8 +34,8 @@ export default function Home() {
             Projects
           </button>
 
-          <button className="mc-button" onClick={() => navigate("/experience")}>
-            Experience
+          <button className="mc-button" onClick={() => navigate("/experiences")}>
+            Experiences
           </button>
 
           <button className="mc-button" onClick={() => navigate("/skills")}>
