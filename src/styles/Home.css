@@ -115,7 +115,7 @@
   transition: 0.1s;
 }
 
-.button-group .mc-button:hover {
+.mc-button:hover {
   background: #8b8b8b;
   color: #ffff55;
 }

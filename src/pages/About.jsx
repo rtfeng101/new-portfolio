@@ -98,7 +98,7 @@ export default function About() {
       </div>
 
       <div className="detail-footer">
-        <button className="mc-button" onClick={() => navigate("/")}>
+        <button className="mc-button about-back" onClick={() => navigate("/")}>
           Back
         </button>
       </div>

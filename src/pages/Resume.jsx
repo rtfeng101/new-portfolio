@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/DetailPage.css";
 import "../styles/Resume.css";
 
-const RESUME_PDF = "/files/resume.pdf";
+const RESUME_PDF = "/files/FengResume.pdf";
 const BLURB = "A brief blurb about yourself and your resume here. Feel free to mention your focus area, years of experience, or what you're currently looking for.";
 
 export default function Resume() {
@@ -35,13 +35,14 @@ export default function Resume() {
           >
             Download Resume
           </a>
-        </div>
-      </div>
 
-      <div className="detail-footer">
-        <button className="mc-button" onClick={() => navigate("/")}>
-          Back
-        </button>
+          <button
+            className="mc-button resume-back"
+            onClick={() => navigate("/")}
+          >
+            Back
+          </button>
+        </div>
       </div>
     </div>
   );

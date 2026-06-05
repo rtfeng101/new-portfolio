@@ -1,0 +1,42 @@
+.contact-buttons-section {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.detail-content .contact-buttons-section{
+  width: fit-content;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  text-align: center;
+
+  padding: 0 24px;
+  width: auto !important;
+  height: 58px;
+
+  color: white;
+
+  position: relative;
+  top: -2px; /* adjust to taste */
+}
+
+.contact-btn:hover {
+  background: #8b8b8b;
+  color: #2b60ff;
+}
+
+.contact-back {
+  width: auto !important;
+  padding: 0 24px;
+  height: 58px;
+}

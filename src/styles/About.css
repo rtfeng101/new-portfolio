@@ -53,3 +53,9 @@
   font-size: 0.9rem;
   line-height: 1.6;
 }
+
+.about-back {
+  width: auto !important;
+  padding: 0 24px;
+  height: 58px;
+}

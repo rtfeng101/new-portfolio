@@ -1,0 +1,42 @@
+.resume-viewer-section {
+  padding: 0;
+  overflow: hidden;
+}
+
+.resume-iframe {
+  width: 100%;
+  height: 700px;
+  border: none;
+  display: block;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.resume-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 32px;
+
+  color: white;
+  text-decoration: none;
+
+  position: relative;
+}
+
+.resume-download:hover {
+  background: #8b8b8b;
+  color: #2b60ff;
+}
+
+.resume-back {
+  width: auto !important;
+  padding: 0 24px;
+  height: 58px;
+  /* Add your own edits below */
+}
