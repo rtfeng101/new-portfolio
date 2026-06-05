@@ -45,22 +45,16 @@
   padding-bottom: 30px;
 }
 
-.logo {
-  font-family: "Minecraft";
-  font-size: clamp(5rem, 9vw, 8rem);
-
-  color: white;
-
-  white-space: nowrap;
-
-  text-shadow: 4px 4px black;
+.logo-section img {
+  width: 60vw;
+  height: auto;
 }
 
 
 .splash-text {
   position: absolute;
 
-  right: -130px;
+  right: -10%;
   top: 75px;
 
   color: #ffff55;
@@ -113,6 +107,8 @@
   font-family: "Minecraft";
 
   font-size: 1.25rem;
+
+  padding-bottom: 4px;
 
   cursor: pointer;
 

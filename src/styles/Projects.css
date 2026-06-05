@@ -1,0 +1,146 @@
+.mc-selector-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  color: white;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../textures/dirt.png");
+  background-repeat: repeat;
+  background-size: 64px 64px;
+}
+
+.selector-title {
+  margin-bottom: 15px;
+
+  font-size: 2rem;
+  letter-spacing: 1px;
+
+  text-shadow:
+    3px 3px black;
+
+  font-family: "Minecraft", sans-serif;
+}
+
+.selector-search {
+  width: 650px;
+  height: 60px;
+  font-size: 25px;
+
+  margin-bottom: 20px;
+
+  background: black;
+  color: white;
+
+  border: 3px solid #ffffff;
+
+  font-family: Minecraft;
+}
+
+.selector-list {
+  width: 100vw;
+  height: 500px;
+
+  overflow-y: auto;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  position: relative;
+}
+
+.selector-list::-webkit-scrollbar {
+  display: none; 
+}
+
+.selector-list {
+  scrollbar-width: none;
+}
+
+.custom-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 128px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.world-entry {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 8px;
+
+  cursor: pointer;
+
+  position: relative;
+  z-index: 1;
+
+  margin: 0 20%;
+}
+
+.world-entry:hover {
+  background: rgba(
+    128,
+    128,
+    128,
+    0.25
+  );
+}
+
+.world-entry.selected {
+  background: rgba(
+    128,
+    128,
+    128,
+    0.65
+  );
+}
+
+.world-thumb {
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  image-rendering: pixelated;
+}
+
+.world-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.world-title {
+  color: white;
+}
+
+.world-date {
+  color: #bdbdbd;
+}
+
+.world-meta {
+  color: #9c9c9c;
+}
+
+.selector-buttons {
+  display: flex;
+
+  gap: 12px;
+  margin: 20px 0;
+}
+

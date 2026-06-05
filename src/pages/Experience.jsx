@@ -1,16 +1,25 @@
-import { useNavigate } from "react-router-dom";
+import { experiences } from "../data/experiences";
+import SelectorScreen from "../components/SelectorScreen";
+import WorldEntry from "../components/WorldEntry";
 
-export default function Experience() {
-  const navigate = useNavigate();
-
+export default function Experiences() {
   return (
-    <div style={{ color: "white", padding: 20 }}>
-      <h1>EXPERIENCE</h1>
-      <p>Work history placeholder</p>
-
-      <button onClick={() => navigate("/")}>
-        Back
-      </button>
-    </div>
+    <SelectorScreen
+      title="Select Experience"
+      items={experiences}
+      filterFn={(experience, query) =>
+        experience.title.toLowerCase().includes(query.toLowerCase())
+      }
+      renderItem={(experience, isSelected, onSelect) => (
+        <WorldEntry
+          key={experience.id}
+          project={experience}   // WorldEntry is data-shape agnostic; reuse as-is
+          selected={isSelected}
+          onClick={onSelect}
+        />
+      )}
+      getOpenPath={(experience) => `/experiences/${experience.id}`}
+      openLabel="Open Experience"
+    />
   );
 }
