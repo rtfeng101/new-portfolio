@@ -59,3 +59,7 @@
   padding: 0 24px;
   height: 58px;
 }
+
+.detail-content .detail-section.bullet-list {
+  width: min(600px, 90vw);
+}
