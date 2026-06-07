@@ -54,9 +54,9 @@ export default function Panorama() {
         
         /* Speed adjustment */
         camera.lookAt(
-            Math.sin(elapsed * 0.05) * 10,
+            Math.sin(elapsed * 0.125) * 10,
             -1,
-            Math.cos(elapsed * 0.05) * 10
+            Math.cos(elapsed * 0.125) * 10
         );
 
         renderer.render(scene, camera);

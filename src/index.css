@@ -159,3 +159,7 @@ code {
 
   backdrop-filter: blur(2px);
 }
+
+img, canvas {
+  -webkit-user-drag: none;
+}
