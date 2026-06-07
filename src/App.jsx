@@ -11,11 +11,13 @@ import ProjectDetail from "./pages/ProjectDetail";
 import SkillDetail from "./pages/SkillDetail";
 import ExperienceDetail from "./pages/ExperienceDetail";
 
+import Panorama from "./components/Panorama";
+
 
 export default function App() {
   return (
     <>
-        <div className="panorama" />
+        <Panorama />
         <Routes>
         <Route path="/" element={<Home />} />
 
@@ -30,6 +32,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
         </Routes>
+        
     </>
   );
 }

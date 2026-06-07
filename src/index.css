@@ -136,3 +136,26 @@ code {
   font-family: "Minecraft";
   src: url("./assets/minecraft-font.otf");
 }
+
+.panorama-three {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+}
+
+.panorama-three canvas {
+  display: block;
+}
+
+.panorama-three::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  pointer-events: none;
+
+  backdrop-filter: blur(2px);
+}
