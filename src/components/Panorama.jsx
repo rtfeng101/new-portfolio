@@ -41,20 +41,25 @@ export default function Panorama() {
     scene.background = skybox;
 
     const clock = new THREE.Clock();
+    let last = 0;
+    const fps = 60;
+    const interval = 1000/fps;
 
     const animate = () => {
-    requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
+        
+        if (time - last < interval) return;
+        last = time;
+        const elapsed = 
+        
+        /* Speed adjustment */
+        camera.lookAt(
+            Math.sin(elapsed * 0.5) * 10,
+            -1,
+            Math.cos(elapsed * 0.5) * 10
+        );
 
-    const elapsed = clock.getElapsedTime();
-    
-    /* Speed adjustment */
-    camera.lookAt(
-        Math.sin(elapsed * 0.5) * 10,
-        -1,
-        Math.cos(elapsed * 0.5) * 10
-    );
-
-    renderer.render(scene, camera);
+        renderer.render(scene, camera);
     };
 
     animate();
