@@ -14,7 +14,8 @@
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.16.0",
     "three": "^0.184.0",
-    "three.js": "^0.77.1"
+    "three.js": "^0.77.1",
+    "timer": "^1.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

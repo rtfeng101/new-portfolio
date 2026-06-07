@@ -3,7 +3,7 @@ import * as THREE from "three";
 
 export default function Panorama() {
   const mountRef = useRef(null);
-
+  
   useEffect(() => {
     const container = mountRef.current;
 
@@ -23,7 +23,7 @@ export default function Panorama() {
     });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(1);
 
     container.appendChild(renderer.domElement);
 
@@ -45,18 +45,18 @@ export default function Panorama() {
     const fps = 60;
     const interval = 1000/fps;
 
-    const animate = () => {
-        requestAnimationFrame(animate);
+    const animate = (time) => {
+      requestAnimationFrame(animate);
         
-        if (time - last < interval) return;
+        if(time - last < interval) return;
         last = time;
-        const elapsed = 
+        const elapsed = clock.getElapsedTime();
         
         /* Speed adjustment */
         camera.lookAt(
-            Math.sin(elapsed * 0.5) * 10,
+            Math.sin(elapsed * 0.05) * 10,
             -1,
-            Math.cos(elapsed * 0.5) * 10
+            Math.cos(elapsed * 0.05) * 10
         );
 
         renderer.render(scene, camera);
@@ -75,9 +75,13 @@ export default function Panorama() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+
+      cancelAnimationFrame(frameId);
+
+      scene.clear();
       renderer.dispose();
 
-      if (container.contains(renderer.domElement)) {
+      if (container && renderer.domElement) {
         container.removeChild(renderer.domElement);
       }
     };
