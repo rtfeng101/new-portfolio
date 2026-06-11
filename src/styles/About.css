@@ -1,3 +1,9 @@
+.text-content p {
+  margin: 0;
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
 /* ── Hero ───────────────────────────────────────────────────────────────── */
 .about-hero {
   display: flex;
@@ -60,6 +66,33 @@
   height: 58px;
 }
 
-.detail-content .detail-section.bullet-list {
-  width: min(600px, 90vw);
+.detail-section.text-block {
+  width: min(700px, 90vw);
+  white-space: pre-line;
+}
+
+.detail-section.two-column-text {
+  width: min(1050px, 90vw);
+} 
+
+.detail-section.photo-list {
+  width: min(1000px, 90vw);
+
+}
+
+.about-photo-list .photo-list-frame .item-frame img {
+  width: 180px;
+  height: 180px;
+}
+
+.about-photo-list .photo-list-text .world-title {
+  font-size: 24px;
+}
+
+.detail-section.image-grid {
+  width: min(900px, 90vw);
+}
+
+.detail-section.bullet-list {
+  width: min(700px, 90vw);
 }
