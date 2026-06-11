@@ -2,11 +2,15 @@ import { useNavigate } from "react-router-dom";
 import "../styles/DetailPage.css";
 import "../styles/Contact.css";
 
+import emailIcon from "../assets/icons/email.png";
+import linkedinIcon from "../assets/icons/linkedin.png";
+import githubIcon from "../assets/icons/github.png";
+
 const CONTACT = {
   blurb: "Feel free to reach out! Whether it's about a project, opportunity, or just to say hello — I'd love to hear from you.",
-  email: "your@email.com",
-  linkedin: "https://linkedin.com/in/yourhandle",
-  github: "https://github.com/yourhandle",
+  email: "richardfeng101@gmail.com",
+  linkedin: "https://linkedin.com/in/rtfeng101",
+  github: "https://github.com/rtfeng101",
 };
 
 export default function Contact() {
@@ -28,7 +32,8 @@ export default function Contact() {
             href={`mailto:${CONTACT.email}`}
             className="mc-button contact-btn"
           >
-            ✉ Email Me
+            <img src={emailIcon} alt="" className="contact-icon" />
+            Email Me
           </a>
 
           <a
@@ -37,7 +42,8 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="mc-button contact-btn"
           >
-            in LinkedIn
+            <img src={linkedinIcon} alt="" className="contact-icon" />
+            LinkedIn
           </a>
 
           <a
@@ -46,7 +52,8 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="mc-button contact-btn"
           >
-            ⌥ GitHub
+            <img src={githubIcon} alt="" className="contact-icon" />
+            GitHub
           </a>
         </div>
       </div>
