@@ -57,11 +57,10 @@ export const about = {
   ],
 
   extra: [
-    "I've played 8 instruments over the past 15 years (violin for 10)",
+    "I'm really into farming-sim games atm (Fields of Mistria my goat)",
     "My favorite plant in PVZ is the potato mine",
     "My personal best for the 3x3 Rubik's cube used to be 15.04s",
     "Birch wood is top 1 wood in Minecraft",
     "I think I have the cilantro gene (or I just hate cilantro)",
-    "The house in the background panorama is my house in Minecraft",
   ],
 };
