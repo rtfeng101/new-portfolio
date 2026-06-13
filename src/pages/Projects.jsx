@@ -4,11 +4,20 @@ import { projects } from "../data/projects";
 import SelectorScreen from "../components/SelectorScreen";
 import WorldEntry from "../components/WorldEntry";
 
+function parseDate(str) {
+  const endPart = str.split("-").pop().trim();
+  return new Date(`${endPart} 1`);
+}
+
+const sortedProjects = [...projects].sort(
+  (a, b) => parseDate(b.date) - parseDate(a.date)
+);
+
 export default function Projects() {
   return (
     <SelectorScreen
       title="Select Project"
-      items={projects}
+      items={sortedProjects}
       filterFn={(project, query) =>
         project.title.toLowerCase().includes(query.toLowerCase())
       }
