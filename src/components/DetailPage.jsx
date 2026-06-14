@@ -123,6 +123,16 @@ function BulletList({ heading, items }) {
   );
 }
 
+function PdfViewer({ src, header, caption, height = "800px" }) {
+  return (
+    <div className="detail-section pdf-viewer">
+      {header && <h2 className="pdf-header">{header}</h2>}
+      <iframe src={src} title={caption ?? "PDF document"} style={{ width: "100%", height, border: "none" }} />
+      {caption && <p className="frame-caption">{caption}</p>}
+    </div>
+  );
+}
+
 // ── Section dispatcher ─────────────────────────────────────────────────────
 
 function Section(section) {
@@ -136,6 +146,7 @@ function Section(section) {
     case "banner":        return <Banner {...section} />;
     case "text":          return <TextBlock {...section} />;
     case "bullets":       return <BulletList {...section} />;
+    case "pdf": return <PdfViewer {...section} />;
     default:              return null;
   }
 }
@@ -149,11 +160,12 @@ export default function DetailPage({
   sections = [],
   backPath,
   backLabel = "Back",
+  themeClass = "", 
 }) {
   const navigate = useNavigate();
 
   return (
-    <div className="detail-screen">
+    <div className={`detail-screen ${themeClass}`}>
       <div className="detail-header">
         <h1 className="detail-title">{title}</h1>
         <p className="detail-date">{date}</p>

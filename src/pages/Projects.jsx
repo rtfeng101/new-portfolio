@@ -4,6 +4,8 @@ import { projects } from "../data/projects";
 import SelectorScreen from "../components/SelectorScreen";
 import WorldEntry from "../components/WorldEntry";
 
+import "../styles/Projects.css";
+
 function parseDate(str) {
   const endPart = str.split("-").pop().trim();
   return new Date(`${endPart} 1`);
