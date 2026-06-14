@@ -1,14 +1,26 @@
+import netherStar from "../assets/icons/nether_star.png";
+
 export default function WorldEntry({ project, selected, onClick }) {
   return (
     <div
       className={`selector-entry ${selected ? "selected" : ""}`}
       onClick={onClick}
     >
-      <img
-        src={project.thumbnail}
-        alt={project.title}
-        className="world-thumb"
-      />
+      <div className="world-thumb-container">
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className="world-thumb"
+        />
+
+        {project.important && (
+          <img
+            src={netherStar}
+            alt=""
+            className="important-badge"
+          />
+        )}
+      </div>
 
       <div className="world-info">
         <div className="world-title">{project.title}</div>
