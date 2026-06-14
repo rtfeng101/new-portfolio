@@ -131,11 +131,11 @@
   image-rendering: pixelated;
   pointer-events: none;
 
-  animation: floatStar 1.8s ease-in-out infinite;
+  animation: netherStar 2s ease-in-out infinite;
 }
 
-@keyframes floatStar {
-  0% {
+@keyframes netherStar {
+  0%, 100% {
     transform: translateY(0);
   }
 

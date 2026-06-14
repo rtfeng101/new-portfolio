@@ -18,6 +18,9 @@ export default function WorldEntry({ project, selected, onClick }) {
             src={netherStar}
             alt=""
             className="important-badge"
+            style = {{
+              animationDelay: `${Math.random() * 1}s`
+            }}
           />
         )}
       </div>
