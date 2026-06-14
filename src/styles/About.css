@@ -89,10 +89,3 @@
   font-size: 24px;
 }
 
-.detail-section.image-grid {
-  width: min(900px, 90vw);
-}
-
-.detail-section.bullet-list {
-  width: min(700px, 90vw);
-}
