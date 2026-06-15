@@ -253,6 +253,11 @@
   margin-bottom: 24px;
 }
 
+/* ── GitHub link ───────────────────────────────────────────────────────── */
+.github-link .mc-button {
+  padding: 12px 24px;
+}
+
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .detail-footer {
   margin-top: 40px;

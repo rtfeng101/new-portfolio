@@ -1,4 +1,4 @@
-import netherStar from "../assets/icons/nether_star.png";
+import netherStar from "../assets/icons/nether_star.gif";
 
 export default function WorldEntry({ project, selected, onClick }) {
   return (

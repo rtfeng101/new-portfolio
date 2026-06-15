@@ -133,6 +133,16 @@ function PdfViewer({ src, header, caption, height = "800px" }) {
   );
 }
 
+function githubLink(url) {
+  return (
+    <div className="github-link">
+      <button className="mc-button" onClick={() => window.open(url, "_blank")}>
+        View on GitHub
+      </button>
+    </div>
+  );
+}
+
 // ── Section dispatcher ─────────────────────────────────────────────────────
 
 function Section(section) {
@@ -147,6 +157,7 @@ function Section(section) {
     case "text":          return <TextBlock {...section} />;
     case "bullets":       return <BulletList {...section} />;
     case "pdf": return <PdfViewer {...section} />;
+    case "github": return githubLink(section.url);
     default:              return null;
   }
 }
