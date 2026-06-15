@@ -9,11 +9,9 @@ import "../styles/Projects.css";
 function parseDate(str) {
   const endPart = str.split("-").pop().trim();
 
-  if (endPart === "Present") {
-    return new Date(9999, 11, 31);
-  }
+  if (endPart === "Present") return new Date(9999, 11, 31);
 
-  return new Date(`${endPart} 1`);
+  return new Date(endPart);
 }
 
 const sortedProjects = [...projects].sort(

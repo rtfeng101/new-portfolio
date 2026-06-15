@@ -343,6 +343,6 @@ export const projects = [
       ]
     },
     { type: "text", content: "An old project. It is a simple database management system built in C++." },
-  ]
-},
+    ]
+  },
 ];
