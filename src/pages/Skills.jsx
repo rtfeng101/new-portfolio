@@ -8,7 +8,7 @@ export default function Skills() {
   return (
     <SelectorScreen
       title="Select Skill"
-      items={skills}
+      items={[...skills].sort((a, b) => b.proficiency - a.proficiency)}
       filterFn={(skill, query) =>
         skill.title.toLowerCase().includes(query.toLowerCase())
       }

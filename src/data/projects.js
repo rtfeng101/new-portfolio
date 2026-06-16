@@ -95,7 +95,7 @@ export const projects = [
     title: "Asteroids",
     important: true,
     date: "Feb 2025 - Apr 2025",
-    metadata: "React • JavaScript • Spring Boot • Java • Maven • JDBC • phpMyAdmin • REST",
+    metadata: "React • CSS • JavaScript • Spring Boot • Java • Maven • JDBC • phpMyAdmin • GitLab",
     thumbnail: "/images/projects/asteroids_thumbnail.png",
     description:
       "Full-stack Asteroids game with user accounts, stats, and leaderboards.",
@@ -192,7 +192,7 @@ export const projects = [
     id: "old_portfolio",
     title: "Old Personal Portfolio Website",
     date: "Aug 2024 - Sept 2024",
-    metadata: "React • Next.js • TypeScript • JavaScript • Netlify",
+    metadata: "React • Next.js • TypeScript • CSS • JavaScript • Netlify",
     thumbnail: "/images/projects/old_portfolio_thumbnail.png",
     description:
       "Personal portfolio website designed and built from scratch, deployed at richardfeng.dev.",
