@@ -127,7 +127,7 @@ export const skills = [
     id: "nodejs",
     title: "Node.js",
     metadata: "Frontend Development",
-    thumbnail: "../images/skills/nodejs.svg",
+    thumbnail: "../images/skills/nodejs_logo.svg",
     proficiency: 50,
   },
 ];
