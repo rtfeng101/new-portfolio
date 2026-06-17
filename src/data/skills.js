@@ -123,4 +123,11 @@ export const skills = [
     thumbnail: "../images/skills/maven.svg",
     proficiency: 50,
   },
+  {
+    id: "nodejs",
+    title: "Node.js",
+    metadata: "Frontend Development",
+    thumbnail: "../images/skills/nodejs.svg",
+    proficiency: 50,
+  },
 ];

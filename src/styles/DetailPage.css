@@ -138,8 +138,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  padding-inline: 30px;
   justify-content: center;
-  width: min(1100px, 90vw);
+  height: fit-content;
+  width: min(1200px, 90vw);
 }
 
 .grid-item {
@@ -275,5 +277,14 @@
 }
 
 [class*="project-"] .detail-section.text-block {
+  width: min(900px, 90vw);
+}
+
+/* ── Experiences ───────────────────────────────────────────────────── */
+[class*="experience-"] .detail-section.bullet-list {
+  width: min(1000px, 90vw);
+}
+
+[class*="experience-"] .detail-section.text-block {
   width: min(900px, 90vw);
 }
