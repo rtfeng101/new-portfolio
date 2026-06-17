@@ -1,6 +1,6 @@
 export const about = {
   hero: {
-    photo: "/images/hero.jpg",
+    photo: "/images/about/hero.jpg",
     name: "Richard Feng",
     tagline: "Hey there!",
     subtext: "UW Madison Alumni • CompSci and DataSci • Software Developer",
@@ -34,26 +34,26 @@ export const about = {
 
   hobbies: [
     {
-      src: "/images/hobby1.png",
+      src: "/images/about/hobby1.jpg",
       title: "Dance",
       text: "I started dancing in 2025 through Kpop and Hip-hop. I recently took a freestyle dance class and continue to dance at studios for fun. This image was from my first (and only) dance battle at UW-Madison. Dancing helps with the sedentary lifestyle...",
     },
     {
-      src: "/images/hobby2.jpg",
+      src: "/images/about/hobby2.jpg",
       title: "Pokemon Cards",
       text: "My brother and I collected as kids and I've gotten back into it recently. I mostly watch my friends collect, but I do have a small collection of my own. I took a picture of my first page from my binder, half of which are old and half are new.",
     },
     {
-      src: "/images/hobby3.png",
+      src: "/images/about/hobby3.png",
       title: "Guitar",
       text: "I've been playing guitar since high school. I mostly play just at home to fill the mental context switches, but I was also part of a volunteer club at school. Here's an old image of that.",
     },
   ],
 
   photos: [
-    { src: "/images/photo1.jpg", caption: "Devil's Lake, Madison" },
-    { src: "/images/photo2.jpg", caption: "Graduation!" },
-    { src: "/images/photo3.jpg", caption: "Classic LinkedIn Photo" },
+    { src: "/images/about/photo1.jpg", caption: "Devil's Lake, Madison" },
+    { src: "/images/about/photo2.jpg", caption: "Graduation!" },
+    { src: "/images/about/photo3.jpg", caption: "Classic LinkedIn Photo" },
   ],
 
   extra: [
