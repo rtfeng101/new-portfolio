@@ -107,6 +107,7 @@
   display: flex;
   gap: 24px;
   align-items: flex-start;
+  width: min(800px, 90vw);
 }
 
 .frame-col {
@@ -117,8 +118,9 @@
 }
 
 .frame-col .item-frame img {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
+  display: fit-content;
 }
 
 .text-col {
@@ -128,6 +130,7 @@
   justify-content: center;
   line-height: 1.7;
   color: #e0e0e0;
+  align-self: center;
 }
 
 /* ── image-grid ─────────────────────────────────────────────────────────── */
@@ -135,8 +138,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  padding-inline: 30px;
   justify-content: center;
-  width: fit-content;
+  height: fit-content;
+  width: min(1200px, 90vw);
 }
 
 .grid-item {
@@ -146,8 +151,8 @@
 }
 
 .detail-section.image-grid .item-frame img {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
 }
 
 /* ── photo-list ─────────────────────────────────────────────────────────── */
@@ -238,6 +243,23 @@
   line-height: 1.6;
 }
 
+/* ── PDF Viewer ───────────────────────────────────────────────────────── */
+.detail-section.pdf-viewer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-section.pdf-viewer .pdf-header {
+  margin-bottom: 24px;
+}
+
+/* ── GitHub link ───────────────────────────────────────────────────────── */
+.github-link .mc-button {
+  padding: 12px 24px;
+}
+
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .detail-footer {
   margin-top: 40px;
@@ -245,4 +267,24 @@
 
 .detail-footer .mc-button {
   width: 300px;
+}
+
+
+
+/* ── Projects ─────────────────────────────────────────────────── */
+[class*="project-"] .detail-section.bullet-list {
+  width: min(1000px, 90vw);
+}
+
+[class*="project-"] .detail-section.text-block {
+  width: min(900px, 90vw);
+}
+
+/* ── Experiences ───────────────────────────────────────────────────── */
+[class*="experience-"] .detail-section.bullet-list {
+  width: min(1000px, 90vw);
+}
+
+[class*="experience-"] .detail-section.text-block {
+  width: min(900px, 90vw);
 }

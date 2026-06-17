@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 
   text-decoration: none;
   text-align: center;
@@ -27,7 +28,15 @@
   color: white;
 
   position: relative;
-  top: -2px; /* adjust to taste */
+  top: -2px;
+}
+
+.contact-icon {
+  height: 70%;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: pixelated;
 }
 
 .contact-btn:hover {

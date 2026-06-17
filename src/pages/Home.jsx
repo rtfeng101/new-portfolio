@@ -54,7 +54,10 @@ export default function Home() {
         </div>
 
         <div className="bottom-bar">
-          <div className="version">Portfolio v1.0</div>
+          <div className="version-block">
+            <div className="version">Portfolio v1.0</div>
+            <div className="disclaimer">Fan project • Not affiliated with Mojang/Microsoft</div>
+          </div>
           <div className="copyright">Built with React • 2026</div>
         </div>
       </div>

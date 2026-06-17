@@ -16,6 +16,7 @@ export default function experienceDetail() {
       sections={experience.sections ?? []}
       backPath="/experiences"
       backLabel="Back to Experiences"
+      themeClass={`experience-${experience.id}`}
     />
   );
 }

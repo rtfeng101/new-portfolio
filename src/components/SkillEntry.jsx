@@ -16,7 +16,6 @@ function getPingImage(proficiency) {
 export default function SkillEntry({ project, skill, selected, onClick }) {
   const pingImg = getPingImage(skill.proficiency ?? 0);
   const { relatedProjects, relatedExperiences } = getRelatedItems(skill);
-  console.log(relatedProjects, relatedExperiences);
 
   return (
     <div

@@ -34,6 +34,8 @@
   height: 60px;
   font-size: 25px;
   margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   background: black;
   color: white;
@@ -88,11 +90,17 @@
 }
 
 /* ─── Entry internals ──────────────────────────────────────────────────── */
-.world-thumb {
+.world-thumb-container {
+  position: relative;
   width: 64px;
   height: 64px;
   flex-shrink: 0;
-  object-fit: cover;
+}
+
+.world-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
   image-rendering: pixelated;
 }
 
@@ -113,6 +121,33 @@
 
 .world-meta {
   color: #9c9c9c;
+}
+
+.important-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+
+  image-rendering: pixelated;
+  pointer-events: none;
+
+  animation: netherStar 2s ease-in-out infinite;
+}
+
+@keyframes netherStar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* ─── Action buttons ───────────────────────────────────────────────────── */

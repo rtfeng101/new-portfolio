@@ -16,6 +16,7 @@ export default function ProjectDetail() {
       sections={project.sections ?? []}
       backPath="/projects"
       backLabel="Back to Projects"
+      themeClass={`project-${project.id}`}
     />
   );
 }

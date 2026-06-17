@@ -3,6 +3,14 @@ import { skills } from "../data/skills";
 import { getRelatedItems } from "../data/skillRelations";
 import DetailPage from "../components/DetailPage";
 
+function parseDate(str) {
+  const endPart = str.split("-").pop().trim();
+
+  if (endPart === "Present") return new Date(9999, 11, 31);
+  
+  return new Date(endPart); 
+}
+
 export default function SkillDetail() {
   const { id } = useParams();
   const skill = skills.find((s) => s.id === id);
@@ -11,15 +19,24 @@ export default function SkillDetail() {
 
   const { relatedProjects, relatedExperiences } = getRelatedItems(skill);
 
+  const sortedRelatedProjects = [...relatedProjects].sort(
+    (a, b) => parseDate(b.date) - parseDate(a.date)
+  );
+
+  const sortedRelatedExperiences = [...relatedExperiences].sort(
+    (a, b) => parseDate(b.date) - parseDate(a.date)
+  );
+
   const sections = [
     ...(skill.sections ?? []),
-    ...(relatedProjects.length > 0
-      ? [{ type: "bullets", heading: "Related Projects", items: relatedProjects.map((p) => p.title) }]
+    ...(sortedRelatedProjects.length > 0
+      ? [{ type: "bullets", heading: "Related Projects", items: sortedRelatedProjects.map((p) => p.title) }]
       : []),
-    ...(relatedExperiences.length > 0
-      ? [{ type: "bullets", heading: "Related Experiences", items: relatedExperiences.map((e) => e.title) }]
+    ...(sortedRelatedExperiences.length > 0
+      ? [{ type: "bullets", heading: "Related Experiences", items: sortedRelatedExperiences.map((e) => e.title) }]
       : []),
   ];
+  console.log(sections);
 
   return (
     <DetailPage
