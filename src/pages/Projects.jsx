@@ -6,12 +6,33 @@ import WorldEntry from "../components/WorldEntry";
 
 import "../styles/Projects.css";
 
+const months = {
+  Jan: 0,
+  Feb: 1,
+  Mar: 2,
+  Apr: 3,
+  May: 4,
+  Jun: 5,
+  July: 6,
+  Jul: 6,
+  Aug: 7,
+  Sept: 8,
+  Sep: 8,
+  Oct: 9,
+  Nov: 10,
+  Dec: 11,
+};
+
 function parseDate(str) {
   const endPart = str.split("-").pop().trim();
 
-  if (endPart === "Present") return new Date(9999, 11, 31);
+  if (endPart === "Present") {
+    return new Date(9999, 11, 31);
+  }
 
-  return new Date(endPart);
+  const [month, year] = endPart.split(" ");
+
+  return new Date(Number(year), months[month]);
 }
 
 const sortedProjects = [...projects].sort(
