@@ -2,7 +2,7 @@ export const experiences = [
   {
     id: "SoS",
 
-    title: "Software Developer II @ Seeds of Success",
+    title: "Software Engineer @ Seeds of Success",
     important: true,
     date: "Jan 2026 - Present",
     metadata:
@@ -11,7 +11,7 @@ export const experiences = [
     thumbnail: "./images/experiences/sos_logo.jpg",
 
     description:
-      "Software developer at SoS, building search and analytics solutions for clients.",
+      "Software engineer at SoS, building search and analytics solutions for clients.",
     
     sections: [
       { 
