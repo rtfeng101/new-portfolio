@@ -293,7 +293,20 @@
 
 /* ── GitHub link ───────────────────────────────────────────────────────── */
 .github-link .mc-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 24px;
+}
+
+.github-icon {
+  height: 1.5em;
+  width: auto;
+  image-rendering: pixelated;
+}
+
+.github-link .mc-button:hover {
+  color: #5555ff;
 }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */

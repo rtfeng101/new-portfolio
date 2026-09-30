@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import githubIcon from "../assets/icons/github.png";
 import "../styles/DetailPage.css";
 
 // ── Section renderers ──────────────────────────────────────────────────────
@@ -157,6 +158,7 @@ function githubLink(url) {
   return (
     <div className="github-link">
       <button className="mc-button" onClick={() => window.open(url, "_blank")}>
+        <img src={githubIcon} alt="" className="github-icon" />
         View on GitHub
       </button>
     </div>
