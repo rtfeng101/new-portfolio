@@ -3,9 +3,9 @@ import "../styles/DetailPage.css";
 
 // ── Section renderers ──────────────────────────────────────────────────────
 
-function ImageCenter({ src, caption }) {
+function ImageCenter({ src, caption, large }) {
   return (
-    <div className="detail-section image-center">
+    <div className={`detail-section image-center${large ? " large" : ""}`}>
       <div className="item-frame">
         <img src={src} alt={caption ?? ""} />
       </div>
@@ -42,6 +42,26 @@ function ImageRight({ src, caption, text }) {
         </div>
         {caption && <p className="frame-caption">{caption}</p>}
       </div>
+    </div>
+  );
+}
+
+function ImageList({ items }) {
+  return (
+    <div className="detail-section image-list">
+      {items.map((item, i) => (
+        <div key={i} className="image-list-row">
+          <div className="frame-col">
+            <div className="item-frame">
+              <img src={item.src} alt={item.caption ?? ""} />
+            </div>
+            {item.caption && <p className="frame-caption">{item.caption}</p>}
+          </div>
+          <div className="text-col">
+            <p>{item.text}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -150,6 +170,7 @@ function Section(section) {
     case "image-center":  return <ImageCenter {...section} />;
     case "image-left":    return <ImageLeft {...section} />;
     case "image-right":   return <ImageRight {...section} />;
+    case "image-list":    return <ImageList {...section} />;
     case "image-grid":    return <ImageGrid {...section} />;
     case "photo-list":    return <PhotoList {...section} />;
     case "two-column-text": return <TwoColumnText {...section} />;

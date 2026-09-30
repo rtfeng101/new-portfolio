@@ -156,7 +156,7 @@ export const projects = [
   {
     id: "card-scanner",
     title: "Pokemon Card Scanner",
-    date: "June 2025 - July 2025",
+    date: "Jun 2025 - Jul 2025",
     metadata: "TensorFlow • React • Node.js • Python • Computer Vision • API",
     thumbnail: "/images/projects/card_scanner_thumbnail.png",
     description:
@@ -303,7 +303,7 @@ export const projects = [
   {
   id: "discord-bot",
   title: "Lobby Organizer Discord Bot",
-  date: "June 2024 - July 2024",
+  date: "Jun 2024 - Jul 2024",
   metadata: "Python • Discord API",
   thumbnail: "/images/projects/discord_thumbnail.png",
   description:
@@ -327,7 +327,7 @@ export const projects = [
 {
   id: "minirel",
   title: "Minirel Database",
-  date: "March 2024 - April 2024",
+  date: "Mar 2024 - Apr 2024",
   metadata: "C++ • UNIX • DBMS • SQL",
   thumbnail: "/images/projects/minirel_thumbnail.png",
   description:
@@ -349,7 +349,7 @@ export const projects = [
   {
   id: "fruit-fly",
   title: "Fruit Fly Plays 2048",
-  date: "September 2026 - Present",
+  date: "Sept 2026 - Present",
   metadata: "Python • CUDA • Tailscale • Ubuntu • PPO",
   thumbnail: "/images/projects/fruit_fly_thumbnail.png",
   description:
@@ -360,6 +360,65 @@ export const projects = [
         A critic read from its real dopamine neurons drives the learning, and a real-time GPU visualization shows signals travelling along real neuron wiring.\
         Work in progress." 
       },
+    ]
+  },
+
+  {
+    id: "lead-radar",
+    title: "Lead Radar: AI Sales Intelligence for Roofing",
+    important: false,
+    date: "Sept 2026",
+    metadata: "Python • FastAPI • PostgreSQL • React • TypeScript • LLMs • Playwright",
+    thumbnail: "/images/projects/lead_radar_thumbnail.png",
+    description:
+      "Full-stack pipeline that finds roofing contractors near a ZIP code, uses an LLM to grade how well each one fits a manufacturer, and writes an account brief for each lead.",
+    sections: [
+      {
+        type: "bullets",
+        heading: "Overview",
+        items: [
+          "Built a sales intelligence tool that finds GAF-certified roofing contractors near any ZIP code and ranks them as leads",
+          "Designed a Postgres job queue with retries, backoff and crash recovery, scaling across concurrent workers with no double-processing",
+          "Built a two-stage LLM matching engine that scores contractors against a 6-criterion rubric, citing evidence for each score",
+          "Combined evidence from GAF profiles, NYC permit and license data, and Google reviews, matching records by phone number and business name",
+          "Cached LLM grades by an input hash, so re-running unchanged data makes zero LLM calls",
+          "Built a React + TypeScript UI with ranked leads, score breakdowns and rep notes, backed by 90+ pytest tests"
+        ]
+      },
+      { type: "image-center", src: "/images/projects/lead_radar_main.png", caption: "Lead Radar dashboard", large: true },
+      {
+        type: "text",
+        content: "The goal of this project was to help sales reps at a roofing distributor figure out which contractors are worth calling, and what to say when they do. \
+          \n \
+          \n \
+          The part I found most interesting was deciding what the LLM should and shouldn't do. Instead of asking a model for a single 'match score', \
+          the model only judges each rubric criterion (product fit, volume, reputation, licensing, brand alignment, tenure) and has to cite the evidence it used. \
+          Code then does the math: criteria with no data are left out rather than counted as zero, citations to evidence that doesn't exist are dropped, \
+          and uncited scores get their confidence capped. That way the headline number is always traceable back to real reviews, permits and licenses. \
+          \n \
+          \n \
+          Real-world data turned out to be messier than expected. Contractors file permits under their registered legal name rather than their brand name \
+          (for example, 'KNA Roofing' files as 'KNA Construction Group LLC'), and many residential re-roofs are never filed at all. \
+          So the system treats 'searched and found nothing' differently from 'couldn't search this area', and uses permit counts only as a lower bound on how busy a contractor is. \
+          \n \
+          \n \
+          [Add a personal note here: what the project was for, what you learned, or what surprised you.]"
+      },
+      { type: "image-list", items: [
+        { src: "/images/projects/lead_radar_ui.png", caption: "Ranked leads and the detail panel",
+          text: "The main view is a ranked list of contractors with a color-coded fit score. Selecting one opens a panel that starts with a summary and a suggested next step, \
+            then gives talking points, watch-outs, and a breakdown of how the score was calculated so reps can trust or question the ranking. \
+            Notes and status changes save straight to the database." },
+        { src: "/images/projects/lead_radar_match.png", caption: "Manufacturer match with cited evidence",
+          text: "Each contractor gets a GAF match percentage with a confidence level, a score per criterion, and the specific reviews, permits or licenses behind each judgement. \
+            Re-running a ZIP code reuses cached pages and grades within a freshness window, so only data that has changed is fetched or graded again." },
+        { src: "/images/projects/lead_radar_score.png", caption: "Rubric scoring breakdown with citations",
+          text: "Each contractor is scored on six weighted criteria: product fit (25%), project volume (20%), reputation & workmanship (20%), \
+          licensing & compliance (20%), brand alignment (10%) and stability & tenure (5%). \
+          Every score comes with the model's reasoning and links to the exact reviews, permits or licenses it relied on, \
+          so the final match percentage can always be traced back to real evidence." },
+      ] },
+      { type: "github", url: "https://github.com/rtfeng101/lead-radar" }
     ]
   },
 ];

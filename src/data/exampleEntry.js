@@ -16,9 +16,11 @@ export const exampleEntry = [
     
     sections: [
       { type: "image-center", src: "...", caption: "..." },
+      { type: "image-center", src: "...", caption: "...", large: true },
       { type: "image-left",   src: "...", caption: "...", text: "..." },
       { type: "image-right",  src: "...", caption: "...", text: "..." },
-      { type: "image-grid",   images: [{ src: "...", caption: "..." }, ] },
+      { type: "image-list",   items: [{ src: "...", caption: "...", text: "..." }, ] },
+      { type: "image-grid",  images: [{ src: "...", caption: "..." }, ] },
       { type: "photo-list",   items: [{ src: "...", title: "...", date: "...", text: "..." }, ] },
       { type: "two-column-text", left: "...", right: "..." },
       { type: "banner",       src: "...", caption: "..." },
