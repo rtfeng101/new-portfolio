@@ -345,4 +345,21 @@ export const projects = [
     { type: "text", content: "An old project. It is a simple database management system built in C++." },
     ]
   },
+
+  {
+  id: "fruit-fly",
+  title: "Fruit Fly Plays 2048",
+  date: "September 2026 - Present",
+  metadata: "Python • CUDA • Tailscale • Ubuntu • PPO",
+  thumbnail: "/images/projects/fruit_fly_thumbnail.png",
+  description:
+    "A fruit fly brain wired from the real FlyEM connectome, learning to play 2048 with PPO in PyTorch.",
+  sections: [
+      { 
+        type: "text", content: "A fruit fly brain wired from the real FlyEM connectome, learning to play 2048 with PPO in PyTorch. \
+        A critic read from its real dopamine neurons drives the learning, and a real-time GPU visualization shows signals travelling along real neuron wiring.\
+        Work in progress." 
+      },
+    ]
+  },
 ];
