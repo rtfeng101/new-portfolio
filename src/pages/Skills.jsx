@@ -12,12 +12,13 @@ export default function Skills() {
       filterFn={(skill, query) =>
         skill.title.toLowerCase().includes(query.toLowerCase())
       }
-      renderItem={(skill, isSelected, onSelect) => (
+      renderItem={(skill, isSelected, onSelect, onOpen) => (
         <SkillEntry
           key={skill.id}
           skill={skill}
           selected={isSelected}
           onClick={onSelect}
+          onDoubleClick={onOpen}
         />
       )}
       getOpenPath={(skill) => `/skills/${skill.id}`}

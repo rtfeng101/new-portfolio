@@ -1,10 +1,11 @@
 import netherStar from "../assets/icons/nether_star.gif";
 
-export default function WorldEntry({ project, selected, onClick }) {
+export default function WorldEntry({ project, selected, onClick, onDoubleClick }) {
   return (
     <div
       className={`selector-entry ${selected ? "selected" : ""}`}
       onClick={onClick}
+      onDoubleClick={onDoubleClick}
     >
       <div className="world-thumb-container">
         <img

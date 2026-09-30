@@ -47,12 +47,13 @@ export default function Projects() {
       filterFn={(project, query) =>
         project.title.toLowerCase().includes(query.toLowerCase())
       }
-      renderItem={(project, isSelected, onSelect) => (
+      renderItem={(project, isSelected, onSelect, onOpen) => (
         <WorldEntry
           key={project.id}
           project={project}
           selected={isSelected}
           onClick={onSelect}
+          onDoubleClick={onOpen}
         />
       )}
       getOpenPath={(project) => `/projects/${project.id}`}

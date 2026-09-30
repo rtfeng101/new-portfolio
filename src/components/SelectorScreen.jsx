@@ -16,7 +16,7 @@ import "../styles/Selector.css";
  * @param {string}   title          - Heading text, e.g. "Select Project"
  * @param {object[]} items          - Full unfiltered list of items
  * @param {function} filterFn       - (item, query) => boolean  — how to match search
- * @param {function} renderItem     - (item, isSelected, onSelect) => ReactNode
+ * @param {function} renderItem     - (item, isSelected, onSelect, onOpen) => ReactNode
  * @param {string}   openPath       - Route to navigate to on "Open", receives selected item
  * @param {function} [getOpenPath]  - (selectedItem) => string  — overrides openPath
  * @param {string}   [openLabel]    - Button label (default "Open")
@@ -54,8 +54,12 @@ export default function SelectorScreen({
 
       <div className="selector-list" ref={listRef}>
         {filtered.map((item) =>
-            renderItem(item, selected?.id === item.id, () =>
-                setSelected(selected?.id === item.id ? null : item)
+            renderItem(
+                item,
+                selected?.id === item.id,
+                () => setSelected(selected?.id === item.id ? null : item),
+                // Use `item`, not `selected` — the two clicks before a dblclick toggle selection off
+                () => navigate(getOpenPath(item))
             )
         )}
 

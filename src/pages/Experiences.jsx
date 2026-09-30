@@ -10,12 +10,13 @@ export default function Experiences() {
       filterFn={(experience, query) =>
         experience.title.toLowerCase().includes(query.toLowerCase())
       }
-      renderItem={(experience, isSelected, onSelect) => (
+      renderItem={(experience, isSelected, onSelect, onOpen) => (
         <WorldEntry
           key={experience.id}
           project={experience}   // WorldEntry is data-shape agnostic; reuse as-is
           selected={isSelected}
           onClick={onSelect}
+          onDoubleClick={onOpen}
         />
       )}
       getOpenPath={(experience) => `/experiences/${experience.id}`}

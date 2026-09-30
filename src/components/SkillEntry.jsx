@@ -13,7 +13,7 @@ function getPingImage(proficiency) {
   return PING_IMAGES[index];
 }
 
-export default function SkillEntry({ project, skill, selected, onClick }) {
+export default function SkillEntry({ project, skill, selected, onClick, onDoubleClick }) {
   const pingImg = getPingImage(skill.proficiency ?? 0);
   const { relatedProjects, relatedExperiences } = getRelatedItems(skill);
 
@@ -21,6 +21,7 @@ export default function SkillEntry({ project, skill, selected, onClick }) {
     <div
       className={`selector-entry skill-entry ${selected ? "selected" : ""}`}
       onClick={onClick}
+      onDoubleClick={onDoubleClick}
       >
       <img
         src={skill.thumbnail}
