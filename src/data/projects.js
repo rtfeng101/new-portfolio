@@ -368,7 +368,7 @@ export const projects = [
     title: "Lead Radar: AI Sales Intelligence for Roofing",
     important: false,
     date: "Sept 2026",
-    metadata: "Python • FastAPI • PostgreSQL • React • TypeScript • LLMs • Playwright",
+    metadata: "Python • FastAPI • PostgreSQL • React • LLM Agents • OpenAI API • Playwright",
     thumbnail: "/images/projects/lead_radar_thumbnail.png",
     description:
       "Full-stack pipeline that finds roofing contractors near a ZIP code, uses an LLM to grade how well each one fits a manufacturer, and writes an account brief for each lead.",
@@ -420,5 +420,52 @@ export const projects = [
       ] },
       { type: "github", url: "https://github.com/rtfeng101/lead-radar" }
     ]
+  },
+
+  {
+    id: "multi-tool-chat",
+    title: "Multi-Tool AI Chat Agent",
+    date: "Aug 2026",
+    metadata: "Python • FastAPI • OpenAI API • LLM Agents • Tool Calling",
+    thumbnail: "/images/projects/multi_tool_chat_thumbnail.png",
+    description:
+      "Case study: an LLM agent that routes and orchestrates 191 tools across 7 services to answer natural-language requests.",
+    sections: [
+      {
+        type: "bullets",
+        heading: "Overview",
+        items: [
+          "Built a POST /chat endpoint for a case study that answers natural-language requests using 191 mock tools across Gmail, Google Calendar, Google Drive, Slack, Linear, GitHub, and Perplexity",
+          "Designed a two-stage architecture: an LLM router narrows 191 tools to a per-turn shortlist of 12 or fewer, then a tool-calling loop runs using only those schemas",
+          "Folded service selection, tool selection, and ambiguity detection into a single routing call over a compact one-line-per-tool catalog, with a keyword-based fallback if the router fails",
+          "Built the orchestration loop on the OpenAI Responses API with parallel tool execution, an iteration cap, and a forced final answer when the cap is reached",
+          "Fed tool errors back to the model so it recovers or explains the failure instead of claiming success, and kept already-run tool calls in the log even if the LLM connection drops partway through"
+        ]
+      },
+      {
+        type: "text",
+        content: "The case study came with a FastAPI server exposing 191 mock tools across seven services, and one empty endpoint to implement.\
+        Everything else was fixed: the mock services, the API wiring, and the request/response schema. I could only edit the chat handler and a helpers package.\
+        The endpoint had to return the assistant's reply along with a log of every tool call it made, including arguments, results, and errors, because that log was how it would be graded.\
+        \n \
+        \n \
+        Grading was an automated suite of about 30 hidden scenarios, with state reset between runs.\
+        It mixed single-service lookups, cross-service chains like reading an email and posting a summary to Slack, and multi-step plans.\
+        It also had trick cases: ambiguous prompts where the right move is to ask a clarifying question, and requests for files that don't exist, where claiming success fails the test.\
+        Latency and tool-call efficiency (calls made vs. the minimum needed) were tracked on the scorecard too."
+      },
+      {
+        type: "text",
+        content: "The central problem was scale. Putting all 191 tool schemas into every model call is expensive, and the model gets worse at choosing the right tool.\
+        So I split the job in two: a cheap first pass reads a one-line summary of every tool and picks the handful this request needs,\
+        and the main model only ever sees those.\
+        \n \
+        \n \
+        Two lessons stood out. First, tool selection is not the hard part of an agent. The hard part is knowing when not to act:\
+        asking which project someone means, or admitting a file doesn't exist instead of reporting that it was deleted.\
+        Second, the tool-call log has to reflect what really happened. If a write already went through, it stays in the log even when a later step fails."
+      },
+      { type: "github", url: "https://github.com/rtfeng101/logistic-mcp" }
+    ] 
   },
 ];
